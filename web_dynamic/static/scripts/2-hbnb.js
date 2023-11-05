@@ -22,7 +22,7 @@ $.ajax({
   success: function (json) {
     $('#api_status').addClass('available');
   },
-  
+
   error: function (xhr, status) {
     console.log('error ' + status);
   }
