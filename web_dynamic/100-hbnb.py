@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Starts a Flash Web Application """
+""" starts flash web applications """
 from models import storage
 from models.state import State
 from models.city import City
@@ -16,13 +16,13 @@ app = Flask(__name__)
 
 @app.teardown_appcontext
 def close_db(error):
-    """ Remove the current SQLAlchemy Session """
+    """remove session """
     storage.close()
 
 
 @app.route('/100-hbnb/', strict_slashes=False)
 def hbnb():
-    """ HBNB is alive! """
+    """ HBNB alive! """
     states = storage.all(State).values()
     states = sorted(states, key=lambda k: k.name)
     st_ct = []
